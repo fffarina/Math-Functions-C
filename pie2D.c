@@ -11,9 +11,9 @@ double pie2D(int simul_n){
 	extern double _pow_float(double x, int n);
 	extern double _root(double x);
 	extern unsigned int _seeder();
-	double x, y, distance;
+	
+	double x, y, length;
 	int in_circle = 0;
-	double length;
 	
 	init_genrand64(_seeder());
 
@@ -26,9 +26,6 @@ double pie2D(int simul_n){
 	}
 
 	double result = ((double) in_circle / (double) simul_n)  * 4.0;
-	
-
-	return result;
-		
+	return result;		
 }
 

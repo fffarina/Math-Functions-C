@@ -12,9 +12,9 @@ double pie3D(int simul_n){
 	extern double _pow_float(double x, int n);
 	extern double _root(double x);
 	extern unsigned int _seeder();
-	double x, y, z, distance;
+	
+	double x, y, z, length;
 	int in_sphere = 0;
-	double length;
 	
 	init_genrand64(_seeder());
 
@@ -26,11 +26,8 @@ double pie3D(int simul_n){
 		
 		if (length <= 1) {++in_sphere;} 
 	}
-
-	double result = ((double) in_sphere / (double) simul_n)  * 6.0;
 	
-
-	return result;
-		
+	double result = ((double) in_sphere / (double) simul_n)  * 6.0;
+	return result;	
 }
 
