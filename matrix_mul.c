@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void matrix_mul(int n, int m, int p, int matrix1[n][m], int matrix2[m][p], int* matrix){
+void matrix_mul(int n, int m, int p, int matrix1[n][m], int matrix2[m][p], int result[n][p]){
 	
 	extern int _mul_shift(int a, int b);
 	int mul = 0, sum = 0;
@@ -12,8 +12,7 @@ void matrix_mul(int n, int m, int p, int matrix1[n][m], int matrix2[m][p], int* 
 				mul = _mul_shift(matrix1[i][k], matrix2[k][j]);
 				sum += mul;			
 			}
-			*matrix = sum;
-			++matrix;
+			result[i][j] = sum;
 			sum = 0;
 		}
 	}
